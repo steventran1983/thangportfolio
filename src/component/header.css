@@ -1,0 +1,125 @@
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(var(--header-height) + 1.5rem);
+    column-gap: 1rem;
+}
+
+.nav__logo,
+.nav__toogle{
+    color:var(--title-color);
+    font-weight: var(--font-meduim);
+}
+
+.nav__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.nav__icon,
+.nav__close,
+.nav__toogle{
+    display: none;
+}
+
+.nav__link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-meduim);
+    transition: .3s;
+}
+
+/* Active Link */
+
+.active,
+.nav__link:hover{
+    /* color:var(--title-color-dark); */
+    color:magenta;
+    
+ 
+}
+
+
+@media screen and (max-width: 768px) {
+    .header{
+        top:initial;
+        bottom:0
+    }
+
+    .nav__menu{
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding: 2rem 1.5rem 4rem;
+        border-top: 1px var(--title-color-dark) solid;
+        border-radius: 1.5rem;
+        
+    }
+
+    .menu__show{
+        bottom: 0;
+    }
+
+    .nav__list{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        column-gap: 2rem;
+    }
+
+    .nav__item{
+        /* flex-grow: 1; */
+        width: 25%;
+    }
+    
+    .nav__icon{
+        font-size: 1.5rem;
+    }
+
+    .nav__close{
+        position: absolute;
+        right:1.2rem;
+        bottom:0.5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color:var(--title-color)
+    }
+
+    .nav__close{
+        color:var(--title-color-dark)
+    }
+    
+
+.nav__toogle{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav__toogle:hover {
+    color: var(--title-color-dark);
+}
+
+
+    .nav__icon,
+    .nav__close,
+    .nav__toogle {
+        display: block;
+    }
+}
